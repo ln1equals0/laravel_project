@@ -17,7 +17,7 @@ class RegistersUsers
 	} 
 }
 
-app()->singleton('foo', function() {
+App::singleton('foo', function() {
 	return new RegistersUsers(new Mailer());
 });
 
@@ -45,4 +45,3 @@ Route::get('cards', 'CardsController@index');
 Route::get('cards/{card}', 'CardsController@show');
 
 Route::get('cards/{card}/note/{note}/edit', 'NotesController@edit');
-
