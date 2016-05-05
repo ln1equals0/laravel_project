@@ -1,30 +1,30 @@
 <?php
-class Mailer
-{
+// class Mailer
+// {
 
-}
-class RegistersUsers
-{
-	private $mailer;
+// }
+// class Regmailerers
+// {
+// 	private $mailer;
 
-	public function __construct(Mailer $mailer)
-	{
-		$this->mailer = $mailer;
-	}
+// 	public function __construct(Mailer $mailer)
+// 	{
+// 		$this->mailer = $mailer;
+// 	}
 
-	public function setMailer(Mailer $mailer) {
-		$this->mailer = $mailer;
-	} 
-}
+// 	public function setMailer(Mailer $mailer) {
+// 		$this->mailer = $mailer;
+// 	} 
+// }
 
-App::singleton('foo', function() {
-	return new RegistersUsers(new Mailer());
-});
+// App::singleton('foo', function() {
+// 	return new RegistersUsers(new Mailer());
+// });
 
-$one = app('foo');
-$two = app('foo');
+// $one = app('foo');
+// $two = app('foo');
 
-var_dump($one, $two);
+// var_dump($one, $two);
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -45,3 +45,5 @@ Route::get('cards', 'CardsController@index');
 Route::get('cards/{card}', 'CardsController@show');
 
 Route::get('cards/{card}/note/{note}/edit', 'NotesController@edit');
+
+Route::resource('questions', 'QuestionsController');
